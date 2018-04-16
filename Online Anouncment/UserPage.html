@@ -3,6 +3,10 @@
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <style>
+        body{
+            background-color : ghostwhite;
+            opacity : 0.8;
+        }
         #navBar {
             background-color: deepskyblue;
             list-style-type: none;
@@ -45,7 +49,8 @@
             display :flex;
         }
         #profileSec{
-            padding-left : 200px;
+            padding-top : 20px;
+            padding-left : 150px;
             width : 10%;
         }
         #profIcon{
@@ -55,6 +60,11 @@
         #userId{
             padding-left : 40%;
             text-align :center
+        }
+        #tagSection {
+            width: 200px;
+            background-color: lightgrey;
+            
         }
       
     </style>
@@ -72,20 +82,19 @@
         <div id="bullCon">
             <ul id="annoucmentBull" style="text-decoration:none;">
                 <li class="bulletin">
-                    <div>
-                        <p>
-                            1. Annoucment Goes Here
-                        </p>
-                    </div>
-
+                    <article>
+                        2. Annoucment Goes Here
+                    </article>
                 </li>
                 <li class="bulletin">
-                    <div>
-                        <p>
-                            2. Annoucment Goes Here
-                        </p>
-                    </div>
-
+                    <article>
+                        2. Annoucment Goes Here
+                    </article>
+                </li>
+                <li class="bulletin">
+                    <article>
+                        3. Annoucment Goes Here
+                    </article>
                 </li>
             </ul>
         </div>
@@ -93,7 +102,30 @@
         <div id="profileSec">
             <img id="profIcon" src="images/icon2.jpg" />
             <br />
-            <label ><b id="userId">Username</b></label>
+            <label ><b id="userId" style="font-size : 30px;">Username</b></label>
+            <div id="tagSection">
+                <ul style="list-style:none;">
+                    <li>
+                        <a href="" target="_self" style="text-decoration : none;">Fakultas</a>
+                        <label>(quantity here)</label>
+                    </li>
+                    <br />
+                    <li>
+                        <a href="" target="_self" style="text-decoration : none;">Jurusan</a>
+                        <label>(quantity here)</label>
+                    </li>
+                    <br />
+                    <li>
+                        <a href="" target="_self" style="text-decoration : none;">Mata Kuliah</a>
+                        <label>(quantity here)</label>
+                    </li>
+                    <br />
+                    <li>
+                        <a href="" target="_self" style="text-decoration : none;">Angkatan</a>
+                        <label>(quantity here)</label>
+                    </li>
+                </ul>
+            </div>
         </div>
     </div>
     
