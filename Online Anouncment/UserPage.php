@@ -3,34 +3,11 @@
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <style>
-        body{
-            background-color : ghostwhite;
-            opacity : 0.8;
-        }
-        #navBar {
-            background-color: deepskyblue;
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-            overflow: hidden;
-        }
 
-        .nav {
-            float: left;
-            border-right: 1px solid #000000;
+        body {
+            background-color: lightslategrey;
         }
-
-            .nav a {
-                display: block;
-                text-align: center;
-                text-decoration: none;
-                color: white;
-                padding: 14px 30px;
-            }
-
-        li a:hover {
-            background-color: dodgerblue;
-        }
+        
         /*CSS for the body*/
        
         #hugeCon{
@@ -60,16 +37,13 @@
 </head>
 <body>
     <!--Top NavBar-->
-    <ul id="navBar">
-        <li class="nav"><a href="#home">Home</a></li>
-        <li class="nav" id="last" style="float:right; border-left: 1px solid #000000; border-right:none;"><a href="LoginPage.php">Log out</a></li>
-    </ul>
+    <?php include("Layout/header.php"); ?>
     <div id="hugeCon">
         <!--Bulletin For the Annoucment-->
 		<?php include("Layout/bulletin.php"); ?>
         <!--Profile Section-->
         <div id="profileSec">
-            <img id="profIcon" src="images/icon2.jpg" />
+            <img id="profIcon" src="images/icon3.png" />
             <br />
             <label ><b id="userId" style="font-size : 30px;">Username</b></label>
             <div id="tagSection">
