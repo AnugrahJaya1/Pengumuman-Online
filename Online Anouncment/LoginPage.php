@@ -34,21 +34,21 @@
 </head>
 <body>
     <div id="container">
-        <form get="post" action="controller/login.php">
+        <form>
             <div id="icon">
                 <img src="images/icon2.jpg" />
             </div>
-            <label> <b>Email</b></label>
+            <label> <b>Username</b></label>
             <br />
-            <input type="text" placeholder="Enter Email" name="email"/>
+            <input type="text" placeholder="Enter Username"/>
             <br />
             <br />
             <label><b>Password</b></label>
             <br />
-            <input type="password" placeholder="Enter Password" name="password" />
+            <input type="password" placeholder="Enter Password" />
             <br />
             <br />
-            <button id="LoginButt" type="submit" name="login">Login</button>
+            <button id="LoginButt" type="submit">Login</button>
         </form>
     </div>
     <div id="footer">
