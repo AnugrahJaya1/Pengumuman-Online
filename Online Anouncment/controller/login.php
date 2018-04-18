@@ -4,39 +4,31 @@
 	$success=false;
 	$serverName="localhost";
 		
-	$mysqli;
 
-	$mysqli=new mysqli($serverName,"root","","pengumuman online");
+	if(isset($_POST['login'])){
+		if(empty($_POST['email']) || empty($_POST['password'])){
+			echo "Email atau Password harus diisi";
+			header("Location : LoginPage.php");
+		}else{
+			$email=$_POST['email'];
+			$password=md5($_POST['password']);
 
-	if ($mysqli->connect_error) {
-    	die("Connection failed: " . $mysqli->connect_error);
-	} else{
-		echo "Connected successfully";
+			$mysqli=new mysqli($serverName,"root","","pengumuman online");
 
-		if(isset($_GET['login'])){
-			if(empty($_GET['email']) || empty($_GET['password'])){
-				$success=false;
-			}else{
-				$email=$_GET['email'];
-				$password=$_GET['password'];
-				
-				$password=md5("$password");
+			$sql="SELECT * FROM mahasiswa WHERE EmailMahasiswa='$email'";
+			$res=$mysqli->query($sql);
 
-				$sql="SELECT * FROM mahasiswa WHERE EmailMahasiswa='$email' ";
-				$res=$mysqli->query($sql);
-
-				if($res && $res->num_rows >0){
-					$row=$res->fetch_array();
-					if($row['PasswordMahasiswa']==$password){
-						echo "Login succes";
-					}else{
-						echo"Error";
-					}
+			if($res && $res->num_rows >0){
+				$row=$res->fetch_array();
+				if($row['PasswordMahasiswa']==$password){
+					echo "Login succes";
 				}else{
-					echo"Error : Email $email does exist";
+					echo"SALAH PASSWORD";
 				}
+			}else{
+				echo"Error : Email $email does exist";
 			}
 		}
-
 	}
+
 ?>
