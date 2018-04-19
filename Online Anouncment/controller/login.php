@@ -18,16 +18,14 @@
 			$password=md5($_POST['password']);
 
 			$temp=substr($email, 8,3);
-			if($temp=="mhs"){
-				setcookie("user", $email); 
+			if($temp==="mhs"){
+				setcookie("user", $email,time() - 3600); 
 				$mysqli=new mysqli($serverName,"mahasiswa","","pengumuman online");
+				//echo $_COOKIE["user"];
 			}else{
-				setcookie("admin", $email); 
+				setcookie("admin", $email,time() - 3600); 
 				$mysqli=new mysqli($serverName,"admin","","pengumuman online");
 			}
-
-			setcookie("user", $email); 
-			//echo $_COOKIE["user"];
 
 			$mysqli=new mysqli($serverName,"mahasiswa","","pengumuman online");
 

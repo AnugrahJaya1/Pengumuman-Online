@@ -1,18 +1,27 @@
 <?php
-	$mysqli=new mysqli("localhost","root","","pengumuman online");
-	$user=$_COOKIE["user"];
+	$mysqli=new mysqli("localhost","mahasiswa" ,"" ,"pengumuman online");
+	if(isset($_COOKIE["user"])){
+		$user=$_COOKIE["user"];
+	}
 	//echo $user;
 
-	$sql="SELECT * FROM pengumuman inner join tagpengumuman on 
-	pengumuman.IdPengumuman=tagpengumuman.IdPengumuman inner join pengumumanmahasiswa on tagpengumuman.IdTag=pengumumanmahasiswa.IdTag WHERE pengumumanmahasiswa.EmailMahasiswa='$user'";
+	$sql="SELECT * FROM pengumuman INNER JOIN tagpengumuman ON pengumuman.IdPengumuman=tagpengumuman.IdPengumuman INNER JOIN pengumumanmahasiswa ON tagpengumuman.IdTag=pengumumanmahasiswa.IdTag";
 
 	$res=$mysqli->query($sql);
 	$row=$res->fetch_array();
+	//echo sizeof($row)." ";
 
-	echo $row["Judul"] . " ". $row["Author"] . " "  . $row["Tanggal"] . " "  . $row["Deskripsi"];
-
-	// for($i=0;$i<sizeof($row);$i++){
-	// 	echo $row["Judul"];
-	// }
+	$Judul=$row["Judul"];
+	$des=$row["Deskripsi"];
+	echo "
+	<li class='bulletin'>
+      	<article>
+            $Judul
+        </article> 
+        <p> $des </p>
+    </li> 
+    ";
+    
+	
 
 ?>
