@@ -3,17 +3,33 @@
 	$password="";
 	$success=false;
 	$serverName="localhost";
-		
+	$error= array();
 
 	if(isset($_POST['login'])){
-		if(empty($_POST['email']) || empty($_POST['password'])){
-			echo "Email atau Password harus diisi";
-			header("Location : LoginPage.php");
+
+		if(empty($_POST['email'])) {
+			array_push($error, "Email Doesn't Exist");
+			header('Location: ../LoginPage.php');
+		} else if( empty($_POST['password'])){
+			array_push($error, "Wrong password ");
+			header('Location: ../LoginPage.php');
 		}else{
 			$email=$_POST['email'];
 			$password=md5($_POST['password']);
 
-			$mysqli=new mysqli($serverName,"root","","pengumuman online");
+			$temp=substr($email, 8,3);
+			if($temp=="mhs"){
+				setcookie("user", $email); 
+				$mysqli=new mysqli($serverName,"mahasiswa","","pengumuman online");
+			}else{
+				setcookie("admin", $email); 
+				$mysqli=new mysqli($serverName,"admin","","pengumuman online");
+			}
+
+			setcookie("user", $email); 
+			//echo $_COOKIE["user"];
+
+			$mysqli=new mysqli($serverName,"mahasiswa","","pengumuman online");
 
 			$sql="SELECT * FROM mahasiswa WHERE EmailMahasiswa='$email'";
 			$res=$mysqli->query($sql);
@@ -21,9 +37,9 @@
 			if($res && $res->num_rows >0){
 				$row=$res->fetch_array();
 				if($row['PasswordMahasiswa']==$password){
-					echo "Login succes";
+					header('Location: ../UserPage.php');
 				}else{
-					echo"SALAH PASSWORD";
+					header('Location: ../LoginPage.php');
 				}
 			}else{
 				echo"Error : Email $email does exist";
