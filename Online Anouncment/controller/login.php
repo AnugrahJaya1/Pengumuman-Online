@@ -5,6 +5,9 @@
 	$serverName="localhost";
 	$error= array();
 
+	$mysqli;
+	$sql;
+
 	if(isset($_POST['login'])){
 
 		if(empty($_POST['email'])) {
@@ -18,29 +21,37 @@
 			$password=md5($_POST['password']);
 
 			$temp=substr($email, 8,3);
-			if($temp==="mhs"){
+			//echo $temp;
+
+			//cek yang login mahasiswa atau admin
+			if($temp=="mhs"){
 				setcookie("user", $email,time() - 3600); 
-				$mysqli=new mysqli($serverName,"mahasiswa","","pengumuman online");
+				$mysqli=new mysqli($serverName,"mahasiswa","","pengumuman online");//akses database dengan akun mahasiswa(hanya bisa select)
+				$sql="SELECT * FROM mahasiswa WHERE EmailMahasiswa='$email'";
 				//echo $_COOKIE["user"];
-			}else{
+			}else if($temp=="adm"){
 				setcookie("admin", $email,time() - 3600); 
-				$mysqli=new mysqli($serverName,"admin","","pengumuman online");
+				$mysqli=new mysqli($serverName,"admin","","pengumuman online");//akses databes dengan akun admin(bisa edit semua data di database)
+				$sql="SELECT * FROM admin WHERE EmailAdmin='$email'";
 			}
 
-			$mysqli=new mysqli($serverName,"mahasiswa","","pengumuman online");
 
-			$sql="SELECT * FROM mahasiswa WHERE EmailMahasiswa='$email'";
+			
 			$res=$mysqli->query($sql);
 
 			if($res && $res->num_rows >0){
 				$row=$res->fetch_array();
-				if($row['PasswordMahasiswa']==$password){
-					header('Location: ../UserPage.php');
+				if($row['PasswordMahasiswa']==$password ){
+					header('Location: ../UserPage.php');//redirect ke UserPage
+				}else if($row['PasswordAdmin']==$password)){
+					header('Location: ../index.php');//redirect ke index(admin page)
 				}else{
 					header('Location: ../LoginPage.php');
 				}
 			}else{
-				echo"Error : Email $email does exist";
+				//echo"Error : Email $email does exist";
+				header('Location: ../LoginPage.php');
+				
 			}
 		}
 	}

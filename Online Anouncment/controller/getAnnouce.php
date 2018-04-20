@@ -10,15 +10,23 @@
 	$res=$mysqli->query($sql);
 	$row=$res->fetch_array();
 	//echo sizeof($row)." ";
+	//index 0 untuk atrribute paling awal
+	// for($i=0;$i<(sizeof($row)/2)-1;$i++){
+	// 	echo $row[$i]." " ;
+	// }
 
 	$Judul=$row["Judul"];
 	$des=$row["Deskripsi"];
+	$tgl=$row["Tanggal"];
+	$author=$row["Author"];
 	echo "
 	<li class='bulletin'>
       	<article>
             $Judul
         </article> 
+        <p> Date : $tgl Author : $author </p>
         <p> $des </p>
+        
     </li> 
     ";
     
