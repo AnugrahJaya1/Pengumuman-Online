@@ -18,6 +18,10 @@
         opacity: 0.8;
         display: block;
         width: 60%;
+        margin-right : 4px;
+    }
+    li{
+        margin-bottom : 4px;
     }
 
 </style>

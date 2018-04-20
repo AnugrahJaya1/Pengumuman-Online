@@ -2,7 +2,7 @@
     #profileSec {
         border : inset;
         border-radius : 6px;
-        padding-top: 20px;
+        margin-top: 4px;
         padding-left: 30px;
     }
 
@@ -88,8 +88,8 @@
         <div class="dropdown">
             <button class="dropbtn">Insert</button>
             <div class="dropdown-content">
-                <a href="adminEdit.php" target="_self" style="text-decoration : none;">Mahasiswa</a>
-                <a href="adminEdit.php" target="_self" style="text-decoration : none;">Pengumuman</a>
+                <a href="admininsert.php" target="_self" style="text-decoration : none;">Mahasiswa</a>
+                <a href="adminAnnounce.php" target="_self" style="text-decoration : none;">Pengumuman</a>
             </div>
         </div>
         <div class="dropdown">
