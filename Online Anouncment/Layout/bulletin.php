@@ -3,9 +3,15 @@
     .bulletin {
         list-style: none;
         padding: 5% 5%;
-        background-color: #d7cbcb;
-        border-bottom: solid 4px white;
+        background-color: lightgrey;
+        border-bottom: groove 4px lightslategrey;
+        border-radius : 3px;
     }
+
+        .bulletin:hover {
+            border: outset 4px lightslategrey;
+            border-radius : 3px;
+        }
 
     #bullCon {
         flex : 1;
@@ -33,6 +39,10 @@
                 3. Annoucment Goes Here
             </article>
         </li>
+        <?php
+            include("controller/getAnnouce.php");
+        ?>
+
     </ul>
 </div>
 
