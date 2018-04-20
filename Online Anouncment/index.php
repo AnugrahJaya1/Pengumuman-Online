@@ -3,89 +3,65 @@
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <style>
-        #navBar {
-            background-color: deepskyblue;
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-            overflow: hidden;
-        }
-        .nav{
-            float : left;
-            border-right: 1px solid #000000;
-        }
-        .nav a{
-            display : block;
-            text-align :center;
-            text-decoration : none;
-            color :  white;
-            padding : 14px 30px;
-        }
-        li a:hover {
-            background-color : dodgerblue;
-        }
+
         /*CSS for the body*/
         #hugeCon {
             display: flex;
         }
-
-        #profileSec {
-            padding-top: 20px;
-            padding-left:30px;
+        #overStats{
+            display : block;
+            width : 80%;
+        }
+        #statsTable {
+            margin-top : 5px;
+            border: outset 1px;
+            border-radius : 4px;
+            width: 97%;
+        }
+        
+        th{
+            border : solid 2px ;
+            border-color : deepskyblue;
+            
+        }
+        td {
+            border: solid 2px;
+            border-color : deepskyblue;
         }
 
-        #profIcon {
-            width: 200px;
-            height: 200px;
-        }
-
-        #userId {
-            padding-left: 20%;
-            text-align: center
-        }
-
-        #tagSection {
-            width: 200px;
-            background-color: lightgrey;
-        }
+      
     </style>
     <meta charset="utf-8" />
     <title>Homes</title>
 </head>
 <body>
     <!--Top NavBar-->
-    <ul id="navBar">
-        <li class="nav"><a href="#home">Home</a></li>
-        <li class="nav" id="last" style="float:right; border-left: 1px solid #000000; border-right:none;"><a href="LoginPage.php">Log Out</a></li>
-    </ul>
-	<div id="hugeCon">
-		<!--Bulletin For the Annoucment-->'
-		<?php include("Layout/bulletin.php"); ?>
-		<!--Profile Section-->
-		<div id="profileSec">
-			<img id="profIcon" src="images/icon2.jpg" />
-			<br />
-			<label>
-				<b id="userId" style="font-size : 30px;">Username</b>
-			</label>
-			<div id="tagSection">
-				<ul style="list-style:none;">
-					<li>
-						<a href="" target="_self" style="text-decoration : none;">Edit</a>
-						<label>(quantity here)</label>
-					</li>
-					<li>
-						<a href="" target="_self" style="text-decoration : none;">Insert</a>
-						<label>(quantity here)</label>
-					</li>
-					<li>
-						<a href="" target="_self" style="text-decoration : none;">Update</a>
-						<label>(quantity here)</label>
-					</li>
-				</ul>
-			</div>
-		</div>
-	</div>
+    <?php include("Layout/header.php"); ?>
+    <div id="hugeCon">
+        <!--Statistics section-->
+        <div id="overStats">
+            <table id="statsTable">
+                <tr>
+                    <th>
+                        Mahasiswa
+                    </th>
+                    <th>
+                        Tag
+                    </th>
+                    <th>
+                        Pengumuman
+                    </th>
+                </tr>
+                <tr>
+                    <td name="mhsNum" ><?php $mysqli = new mysqli("localhost","root","","pengumuman online"); $sql="SELECT count(NPM) FROM mahasiswa"; $mysqli->query($sql); ?></td>
+                    <td name="tagNum"><?php $mysqli = new mysqli("localhost","root","","pengumuman online"); $sql="SELECT count(idTag) FROM tag"; $mysqli->query($sql); ?> </td>
+                    <td name="annNum"><?php $mysqli = new mysqli("localhost","root","","pengumuman online"); $sql="SELECT count(idPengumuman) FROM pengumuman"; $mysqli->query($sql); ?></td>
+                </tr>
+            </table>
+        </div>
+        <!--Profile Section-->
+        <?php include("Layout/adminProf.php");?>
+    </div>
 
 </body>
 </html>
