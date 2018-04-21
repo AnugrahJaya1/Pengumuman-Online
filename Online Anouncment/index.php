@@ -3,7 +3,6 @@
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <style>
-
         /*CSS for the body*/
         #hugeCon {
             display: flex;
@@ -28,7 +27,9 @@
             border: solid 2px;
             border-color : deepskyblue;
         }
-
+        p{
+            text-align: center;
+        }
       
     </style>
     <meta charset="utf-8" />
@@ -53,9 +54,30 @@
                     </th>
                 </tr>
                 <tr>
-                    <td name="mhsNum" ><?php $mysqli = new mysqli("localhost","root","","pengumuman online"); $sql="SELECT count(NPM) FROM mahasiswa"; $mysqli->query($sql); ?></td>
-                    <td name="tagNum"><?php $mysqli = new mysqli("localhost","root","","pengumuman online"); $sql="SELECT count(idTag) FROM tag"; $mysqli->query($sql); ?> </td>
-                    <td name="annNum"><?php $mysqli = new mysqli("localhost","root","","pengumuman online"); $sql="SELECT count(idPengumuman) FROM pengumuman"; $mysqli->query($sql); ?></td>
+                    <td name="mhsNum" >
+                        <?php include("connection/connectionAdm.php"); 
+                        $sql="SELECT count(NPM) FROM mahasiswa"; 
+                        $res=$mysqli->query($sql); 
+                        $row=$res->fetch_array();
+                        echo "<p> $row[0] </p>";
+                        ?>
+                    </td>
+                    <td name="tagNum">
+                        <?php include("connection/connectionAdm.php");
+                        $sql="SELECT count(idTag) FROM tag";  
+                        $res=$mysqli->query($sql); 
+                        $row=$res->fetch_array();
+                        echo "<p> $row[0] </p>";
+                        ?> 
+                    </td>
+                    <td name="annNum">
+                        <?php include("connection/connectionAdm.php");
+                        $sql="SELECT count(idPengumuman) FROM pengumuman"; 
+                        $res=$mysqli->query($sql); 
+                        $row=$res->fetch_array();
+                        echo "<p> $row[0] </p>";
+                        ?>
+                    </td>
                 </tr>
             </table>
         </div>
