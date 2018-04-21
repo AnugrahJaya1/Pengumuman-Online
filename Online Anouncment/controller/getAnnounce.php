@@ -1,36 +1,33 @@
 <?php
-	include("connection/connectionMhs.php");;
-
-	if(isset($_COOKIE["user"])){
-		$user=$_COOKIE["user"];
-	}
-	//echo $user;
+	include("connection/connectionMhs.php");
+	//include("../connection/connectionMhs.php");
+	//$mysqli=new mysqli("localhost","mahasiswa","","pengumuman online");
+	session_start();
+	$user=$_SESSION["user"];
+	
 
 	$sql="SELECT * 
 		FROM pengumuman 
 		INNER JOIN tagpengumuman ON pengumuman.IdPengumuman=tagpengumuman.IdPengumuman 
-		INNER JOIN pengumumanmahasiswa ON tagpengumuman.IdTag=pengumumanmahasiswa.IdTag";
+		INNER JOIN pengumumanmahasiswa ON tagpengumuman.IdTag=pengumumanmahasiswa.IdTag 
+		WHERE pengumumanmahasiswa.EmailMahasiswa='".$user."'";
 
-	$res=$mysqli->query($sql);
-	$row=$res->fetch_array();
-	//echo sizeof($row)." ";
-	//index 0 untuk atrribute paling awal
-	// for($i=0;$i<(sizeof($row)/2)-1;$i++){
-	// 	echo $row[$i]." " ;
-	// }
-
-	$Judul=$row["Judul"];
-	$des=$row["Deskripsi"];
-	$tgl=$row["Tanggal"];
-	$author=$row["Author"];
-	echo "
-	<li class='bulletin'>
-      	<article>
-            $Judul
-        </article> 
-        <p> Date : $tgl Author : $author </p>
-        <p> $des </p>
-        
-    </li> 
-    ";
+	if($res=$mysqli->query($sql)){
+		while($row=$res->fetch_array()){
+			$Judul=$row["Judul"];
+			$des=$row["Deskripsi"];
+			$tgl=$row["Tanggal"];
+			$author=$row["Author"];
+			echo "
+			<li class='bulletin'>
+				<article>
+					$Judul
+				</article> 
+				<p> Date : $tgl Author : $author </p>
+				<p> $des </p>
+				
+			</li> 
+			";
+		}
+	}
 ?>
