@@ -3,7 +3,7 @@
 	$password="";
 	$success=false;
 	$sql="";
-
+	session_start();
 	if(isset($_POST['login'])){
 
 		if(empty($_POST['email'])) {
@@ -21,12 +21,14 @@
 
 			//cek yang login mahasiswa atau admin
 			if($temp=="mhs"){
-				setcookie("user", $email,time() - 3600); 
+				//setcookie("user", $email,time() + (86400*300)); 
+				$_SESSION["user"]=$email;
 				include("../connection/connectionMhs.php");//akses database dengan akun mahasiswa(hanya bisa select)
 				$sql="SELECT * FROM mahasiswa WHERE EmailMahasiswa='$email'";
 				//echo $_COOKIE["user"];
 			}else if($temp=="adm"){
-				setcookie("admin", $email,time() - 3600); 
+				//setcookie("admin", $email,time() + (86400*300)); 
+				$_SESSION["admin"]=$email;
 				include("../connection/connectionAdm.php");;//akses databes dengan akun admin(bisa edit semua data di database)
 				$sql="SELECT * FROM admin WHERE EmailAdmin='$email'";
 			}
