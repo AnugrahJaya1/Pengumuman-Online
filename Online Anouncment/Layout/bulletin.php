@@ -1,5 +1,4 @@
-
-    <style>
+<style>
     .bulletin {
         list-style: none;
         padding: 5% 5%;
@@ -7,12 +6,10 @@
         border-bottom: groove 4px lightslategrey;
         border-radius : 3px;
     }
-
         .bulletin:hover {
             border: outset 4px lightslategrey;
             border-radius : 3px;
         }
-
     #bullCon {
         flex : 1;
         opacity: 0.8;
@@ -23,14 +20,13 @@
     li{
         margin-bottom : 4px;
     }
-
 </style>
 
 <div id="bullCon">
     <ul id="annoucmentBull" style="text-decoration:none;">
-        <li class="bulletin">
+        <!--<li class="bulletin">
             <article>
-                2. Annoucment Goes Here
+                1. Annoucment Goes Here
             </article>
         </li>
         <li class="bulletin">
@@ -42,12 +38,10 @@
             <article>
                 3. Annoucment Goes Here
             </article>
-        </li>
+        </li>-->
         <?php
-            include("controller/getAnnouce.php");
+            include("controller/getAnnounce.php");
         ?>
 
     </ul>
 </div>
-
-
