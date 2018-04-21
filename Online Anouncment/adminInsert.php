@@ -2,13 +2,10 @@
 
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <style>
-
-
     #hugeCon {
         padding-top : 20px;
         display: flex;
     }
-
     #admnIns {
         padding-top : 20px;
         background-color: lightgrey;
@@ -17,7 +14,6 @@
         display: block;
         width: 60%;
     }
-
     #fomrIns{
         margin-left : 10%;
     }
@@ -37,18 +33,16 @@
     <div id="hugeCon">
         <!--Edit Section-->
         <div id="admnIns">
-            <form id="fomrIns" action="controller/insertMhs.php" method="get" style="padding-left : 10px;">
+            <form id="fomrIns" method="post" action="controller/InsertMhs.php"  style="padding-left : 10px;">
                 NPM :
                 <input class="forms" name="npm" type="text"/> <br /> <br />
-                Nama : 
-                <input class="forms" name="namaMhs" type="text" /> <br /> <br />
                 Email :
                 <input class="forms" name="emailMhs" type="email" /><br /> <br />
                 Password :
-                <input class="forms" name="passMhs" type="text" />
+                <input class="forms" name="passMhs" type="password" />
                 <br />
                 <br />
-                <input type="submit" value="Add" />
+                <input type="submit" value="Add" name="add"/>
             </form>
         </div>
         <!--Profile Section-->
