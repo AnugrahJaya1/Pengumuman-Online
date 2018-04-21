@@ -6,7 +6,7 @@
 	$user=$_SESSION["user"];
 	
 
-	$sql="SELECT * 
+	$sql="SELECT DISTINCT * 
 		FROM pengumuman 
 		INNER JOIN tagpengumuman ON pengumuman.IdPengumuman=tagpengumuman.IdPengumuman 
 		INNER JOIN pengumumanmahasiswa ON tagpengumuman.IdTag=pengumumanmahasiswa.IdTag 
