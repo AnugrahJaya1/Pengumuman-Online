@@ -20,9 +20,9 @@
 			$author=$row["Author"];
 			echo "
 			<li class='bulletin'>
-				<article>
+				<h1>
 					$Judul
-				</article> 
+				</h1> 
 				<p> Date : $tgl Author : $author </p>
 				<p> $des </p>
 				
