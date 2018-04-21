@@ -5,18 +5,14 @@
         margin-top: 4px;
         padding-left: 30px;
     }
-
     #profIcon {
         width: 200px;
         height: 200px;
     }
-
     #userId {
         padding-left: 20%;
         text-align: center
     }
-
-
     #tagSection {
         border-radius: 6px;
         width: 200px;
@@ -33,13 +29,11 @@
         font-size: 16px;
         border: solid;
     }
-
     .dropdown {
         position: relative;
         display: inline-block;
         width : 200px;
     }
-
     .dropdown-content {
         border-radius : 3px;
         display: none;
@@ -49,22 +43,18 @@
         box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
         z-index: 1;
     }
-
         .dropdown-content a {
             color: black;
             padding: 12px 16px;
             text-decoration: none;
             display: block;
         }
-
             .dropdown-content a:hover {
                 background-color: #ddd
             }
-
     .dropdown:hover .dropdown-content {
         display: block;
     }
-
     .dropdown:hover .dropbtn {
         background-color: deepskyblue;
     }
@@ -88,7 +78,7 @@
         <div class="dropdown">
             <button class="dropbtn">Insert</button>
             <div class="dropdown-content">
-                <a href="admininsert.php" target="_self" style="text-decoration : none;">Mahasiswa</a>
+                <a href="adminInsert.php" target="_self" style="text-decoration : none;">Mahasiswa</a>
                 <a href="adminAnnounce.php" target="_self" style="text-decoration : none;">Pengumuman</a>
             </div>
         </div>
