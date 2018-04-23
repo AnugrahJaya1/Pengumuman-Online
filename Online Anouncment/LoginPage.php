@@ -38,6 +38,7 @@
             <div id="icon">
                 <img src="images/icon2.jpg" />
             </div>
+            <!--<?php //include("errors.php"); ?>-->
             <label> <b>Username</b></label>
             <br />
             <input type="text" placeholder="Enter Username" name="email"/>
