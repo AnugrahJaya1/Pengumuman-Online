@@ -9,7 +9,7 @@
             $mysqli->query($sql);
             $sql="UPDATE pengumumanmahasiswa SET PasswordMahasiswa='$password' WHERE NPM='$npm'";
             $mysqli->query($sql);
-            header("../adminEditMhs.php");
+            header("Location: ../adminEditMhs.php");
        }
    }
     

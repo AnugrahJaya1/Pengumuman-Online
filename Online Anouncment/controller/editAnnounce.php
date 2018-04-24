@@ -24,8 +24,7 @@
 
         if(isset($judul) && isset($author) && isset($tanggal) && isset($des) 
              && $judul!="" && $author!="" && $tanggal!="" && $des!=""){
-
-
+                 
             $sql="DELETE FROM pengumuman WHERE Judul='$judul";
             $mysqli->query($sql);
 
