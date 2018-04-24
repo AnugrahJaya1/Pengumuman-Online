@@ -47,7 +47,8 @@
                         <br />
                         <input type="password" name="passCon" placeholder="Insert new Password" id="passTxt" />
                         <br />
-                         <input type="submit" id="searButt" name="subButt" value="Change Password" />        
+                         <input type="submit" id="searButt" name="iUp" value="Update" />    
+                         <input type="submit" id="searButt" name="iDel" value="Delete" />     
                  </fieldset>
                </form>
             </div>
