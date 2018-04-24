@@ -42,6 +42,24 @@
             margin-top: 4px;
             margin-bottom: 5px;
         }
+
+        table {
+            border: 1px solid teal;
+            border-collapse: collapse;
+        }
+
+        td, tr{
+            border: 1px solid teal;
+            padding: 4px;
+        }	
+            
+        th {
+            padding: 4px;
+            border: 1px solid teal;
+            text-align: center;
+            background: teal;
+            color: white;
+        }
     </style>
     <meta charset="utf-8" />
     <title>Edit Annoucment</title>
@@ -58,7 +76,20 @@
                 <br />
                 <input type="button" id="searchButt" name="searchButt" value="Search" />
             </form>
-            <form id="announceText" method="get" action="controller/InsertAnnouncment.php">
+            <br>
+            <table>
+                <tr>
+                    <th>Judul</th>
+                    <th>Author</th>
+                    <th>Tanggal</th>
+                </tr>
+                <?php
+                    include("controller/getAnnounceAdm.php");
+                ?>
+
+            </table>
+
+            <form id="announceText" method="get" action="controller/editAnnounce.php">
                 <fieldset>
                     <legend>Write Announcment here </legend>
                     <br />
