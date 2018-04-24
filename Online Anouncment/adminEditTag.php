@@ -73,7 +73,8 @@
                         <br />
                         <input type="text" name="newName" placeholder="Insert New Name" id="passTxt" />
                         <br />
-                         <input type="submit" id="searButt" name="subButt" value="Change Name" />        
+                         <input type="submit" id="searButt" name="iUp" value="Update" /> 
+                         <input type="submit" id="searButt" name="iDel" value="Delete" />         
                  </fieldset>
                </form>
             </div>
