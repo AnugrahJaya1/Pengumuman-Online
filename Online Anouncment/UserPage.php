@@ -30,7 +30,18 @@
             background-color: lightgrey;
             
         }
-      
+        /* a {
+			text-decoration: none;
+			border: 2px solid teal;
+			//background: black;
+			color: teal;
+			padding: 6px;
+			margin-left: 8px;
+		}
+		a:hover{
+			color: white;
+			//background: teal;
+		} */
     </style>
     <meta charset="utf-8" />
     <title>User Home</title>

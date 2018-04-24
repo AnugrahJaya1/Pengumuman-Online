@@ -87,7 +87,7 @@
                 Search Article <br />
                 <input type="text" id="search" name="searchAnn" placeholder="Announcement Title" />
                 <br />
-                <input type="submit" id="searchButt" name="searchButt" value="Search" />
+                <input type="submit" id="searchButt" name="searchButt" value="Edit" />
             </form>
             <br>
            
