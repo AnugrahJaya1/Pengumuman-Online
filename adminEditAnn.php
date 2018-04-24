@@ -92,18 +92,18 @@
             <br>
            
 
-            <form id="announceText" method="get" action="controller/editAnnounce.php">
+            <!-- <form id="announceText" method="get" action="controller/editAnnounce.php">
                 <fieldset>
                     <legend>Write Announcment here </legend>
                     <br />
-                    <input id="titForm"  type="text" name="annTitle" value="<?php echo (isset($judul))?$judul:'';?>" />
+                    <input id="titForm"  type="text" name="annTitle" >" />
                     <input id="titAuth"  type="text" name="annAuth" />
                     <input id="titDate" type="date" name="annDate" value="" />
                     <textarea name="annText" id="txtField"></textarea>
                     <br />
                     <input type="submit" name="annButt" id="annButt" value="Edit" />
                 </fieldset>
-            </form>
+            </form> -->
         </div>
         
         <!--Profile Section-->
