@@ -4,9 +4,7 @@
 <head>
     <style>
 
-        body {
-            background-color: lightslategrey;
-        }
+      
         
         /*CSS for the body*/
        
@@ -48,7 +46,7 @@
 </head>
 <body>
     <!--Top NavBar-->
-    <?php include("Layout/header.php"); ?>
+    <?php include("Layout/userHeader.php"); ?>
     <div id="hugeCon">
         <!--Bulletin For the Annoucment-->
 		<?php include("Layout/bulletin.php"); ?>

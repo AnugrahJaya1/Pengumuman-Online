@@ -2,88 +2,59 @@
 
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <style>
-        /*CSS for the body*/
-        #hugeCon {
-            display: flex;
-        }
-        #overStats{
-            display : block;
-            width : 80%;
-        }
-        #statsTable {
-            margin-top : 5px;
-            border: outset 1px;
-            border-radius : 4px;
-            width: 97%;
-        }
-        
-        th{
-            border : solid 2px ;
-            border-color : deepskyblue;
-            
-        }
-        td {
-            border: solid 2px;
-            border-color : deepskyblue;
-        }
-        p{
-            text-align: center;
-        }
-      
-    </style>
     <meta charset="utf-8" />
-    <title>Homes</title>
+    <title>Login</title>
+    <style>
+        input[type=text], input[type=password] {
+            width : 100%;
+            height : 25px;
+            display: inline-block;
+        }
+        div{
+            padding-top : 4%;
+            padding-left : 20%;
+            padding-right : 20%;
+        }
+        button{
+            height: 25px;
+            width : 100%;
+            background-color : midnightblue;
+            color : white;
+        }
+        #footer {
+            background-color: #f1f1f1;
+            opacity: 0.9;
+            margin-top : 10px;
+            padding-bottom : 20px;
+        }
+        #icon{
+            margin-left : 17%;
+        }
+    </style>
 </head>
 <body>
-    <!--Top NavBar-->
-    <?php include("Layout/header.php"); ?>
-    <div id="hugeCon">
-        <!--Statistics section-->
-        <div id="overStats">
-            <table id="statsTable">
-                <tr>
-                    <th>
-                        Mahasiswa
-                    </th>
-                    <th>
-                        Tag
-                    </th>
-                    <th>
-                        Pengumuman
-                    </th>
-                </tr>
-                <tr>
-                    <td name="mhsNum" >
-                        <?php include("connection/connectionAdm.php"); 
-                        $sql="SELECT count(NPM) FROM mahasiswa"; 
-                        $res=$mysqli->query($sql); 
-                        $row=$res->fetch_array();
-                        echo "<p> $row[0] </p>";
-                        ?>
-                    </td>
-                    <td name="tagNum">
-                        <?php include("connection/connectionAdm.php");
-                        $sql="SELECT count(idTag) FROM tag";  
-                        $res=$mysqli->query($sql); 
-                        $row=$res->fetch_array();
-                        echo "<p> $row[0] </p>";
-                        ?> 
-                    </td>
-                    <td name="annNum">
-                        <?php include("connection/connectionAdm.php");
-                        $sql="SELECT count(idPengumuman) FROM pengumuman"; 
-                        $res=$mysqli->query($sql); 
-                        $row=$res->fetch_array();
-                        echo "<p> $row[0] </p>";
-                        ?>
-                    </td>
-                </tr>
-            </table>
-        </div>
-        <!--Profile Section-->
-        <?php include("Layout/adminProf.php");?>
+    <div id="container">
+        <form method="post" action="controller/login.php">
+            <div id="icon">
+                <img src="images/icon2.jpg" />
+            </div>
+            <!--<?php //include("errors.php"); ?>-->
+            <label> <b>Username</b></label>
+            <br />
+            <input type="text" placeholder="Enter Username" name="email"/>
+            <br />
+            <br />
+            <label><b>Password</b></label>
+            <br />
+            <input type="password" placeholder="Enter Password" name="password" />
+            <br />
+            <br />
+            <input id="LoginButt" type="submit" value="Login" name="login">
+        </form>
     </div>
-
+    <div id="footer">
+        <a href="" target="_blank">Forgot Password?</a>
+    </div>
+    
 </body>
 </html>

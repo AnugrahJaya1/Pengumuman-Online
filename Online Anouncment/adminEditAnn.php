@@ -29,35 +29,25 @@
             height: 600px;
             padding-top: 10px;
         }
-        #titForm {
-            width: 90%;
-            height: 20%;
-        }
-        #titDate {
-            margin-bottom: 5px;
-            width: 18.2%;
-            height: 20%;
-        }
-        #titAuth {
-            margin-top: 4px;
-            margin-bottom: 5px;
+        #formCon{
+            width : 90%;
         }
 
         table {
-            border: 1px solid teal;
+            border: 1px solid deepskyblue;
             border-collapse: collapse;
         }
 
-        td, tr{
-            border: 1px solid teal;
+        td, tr {
+            border: 1px solid deepskyblue;
             padding: 4px;
-        }	
-            
+        }
+
         th {
             padding: 4px;
-            border: 1px solid teal;
+            border: 1px solid deepskyblue;
             text-align: center;
-            background: teal;
+            background: deepskyblue;
             color: white;
         }
     </style>
