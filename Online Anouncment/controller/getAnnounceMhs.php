@@ -35,22 +35,27 @@
 	$sql .=" LIMIT $start,$show";
 
 	//looping untuk menampilkan pengumuman
+	$temp="";
+
 	if($res=$mysqli->query($sql)){
 		while($row=$res->fetch_array()){
-			$Judul=$row["Judul"];
-			$des=$row["Deskripsi"];
-			$tgl=$row["Tanggal"];
-			$author=$row["Author"];
-			echo "
-			<li class='bulletin'>
-				<h1>
-					$Judul
-				</h1> 
-				<p> Date : $tgl Author : $author </p>
-				<p> $des </p>
-				
-			</li> 
-			";
+			if($temp!=$row["Judul"] || $temp=""){
+				$Judul=$row["Judul"];
+				$des=$row["Deskripsi"];
+				$tgl=$row["Tanggal"];
+				$author=$row["Author"];
+				echo "
+				<li class='bulletin'>
+					<h1>
+						$Judul
+					</h1> 
+					<p> Date : $tgl Author : $author </p>
+					<p> $des </p>
+						
+				</li> 
+				";
+				$temp=$row['Judul'];
+			}	
 		}
 	}
 
