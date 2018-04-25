@@ -35,7 +35,7 @@
     <div id="hugeCon">
         <!--Edit Section-->
         <div id="admnIns">
-            <form id="fomrIns" method="post" action="controller/InsertMhs.php" style="padding-left : 10px;">
+            <form id="fomrIns" method="post" action="controller/alokasiTagPengumuman.php" style="padding-left : 10px;">
                 Judul :
                 <br />
                 <input class="forms" name="judul" type="text" />
