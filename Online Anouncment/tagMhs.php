@@ -44,12 +44,15 @@
                 <fieldset>
                     <legend>Tags</legend>
                     <div data-role="controlgroup">
-                        <label for="red">Red</label>
+                        <!-- <label for="red">Red</label>
                         <input type="checkbox" name="favcolor" id="red" value="red" />
                         <label for="green">Green</label>
                         <input type="checkbox" name="favcolor" id="green" value="green" />
                         <label for="blue">Blue</label>
-                        <input type="checkbox" name="favcolor" id="blue" value="blue" />
+                        <input type="checkbox" name="favcolor" id="blue" value="blue" /> -->
+                        <?php
+                            include("controller/getTag.php")
+                        ?>
                     </div>
                 </fieldset>
                 <input type="submit" value="submit" name="add" />
