@@ -54,7 +54,7 @@
         <div id="profileSec">
             <img id="profIcon" src="images/icon3.png" />
             <br />
-            <label ><b id="userId" style="font-size : 30px;">Username</b></label>
+            <label ><b id="userId" style="font-size : 15px;"><?php  echo $user ?></b></label>
             <div id="tagSection">
                 <ul style="list-style:none;">
                     <li>
