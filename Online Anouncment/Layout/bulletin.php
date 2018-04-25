@@ -40,7 +40,7 @@
             </article>
         </li>-->
         <?php
-            include("controller/getAnnounce.php");
+            include("controller/getAnnounceMhs.php");
         ?>
 
     </ul>
