@@ -85,12 +85,14 @@
                 </tr>
             </table>
 
+            <!--Chart Section-->
             <select>
-                <option value="mahasiswa">Mahasiswa</option>
-                <option value="tag">Tag</option>
+                <option value="mahasiswa" >Mahasiswa</option>
+                <option value="tag" onclick="show()">Tag</option>
             </select>
+
             <!--PIE CHART TEST-->
-            <div id="piechart"></div>
+            <div id="piechartTag" style="display:none;"></div>
 
             <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
             <script type="text/javascript">
@@ -102,21 +104,30 @@
                 function drawChart() {
                     var data = google.visualization.arrayToDataTable([
                         ['Tag Name', 'Usage'],
-                        ['Work', 8],
-                        ['Eat', 2],
-                        ['TV', 4],
-                        ['Gym', 2],
-                        ['Sleep', 8]
+                        ['ta1 ', 8],
+                        ['ta2', 2],
+                        ['ta3', 4],
+                        ['ta4', 2],
+                        ['ta5', 8]
                     ]);
 
                     // Optional; add a title and set the width and height of the chart
 
-                    var options = { 'title': 'My Average Day', 'width': 550, 'height': 400 };
+                    var options = { 'title': 'Tags That are Used', 'width': 700, 'height': 500 };
 
                     // Display the chart inside the <div> element with id="piechart"
-                    var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+                    var chart = new google.visualization.PieChart(document.getElementById('piechartTag'));
                     chart.draw(data, options);
                 }
+
+                function show() {
+                    var x = document.getElementById("piechartTag");
+                     if (x.style.display === "none") {
+                         x.style.display = "block";
+                      } else {
+                          x.style.display = "none";
+                      }
+} 
             </script>
         </div>
         <!--Profile Section-->
