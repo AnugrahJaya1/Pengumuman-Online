@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
@@ -9,7 +11,7 @@
         }
         #overStats{
             display : block;
-            width : 80%;
+            width : 90%;
         }
         #statsTable {
             margin-top : 5px;
@@ -32,7 +34,9 @@
         }
       
     </style>
+   
     <meta charset="utf-8" />
+
     <title>Homes</title>
 </head>
 <body>
@@ -80,6 +84,40 @@
                     </td>
                 </tr>
             </table>
+
+            <select>
+                <option value="mahasiswa">Mahasiswa</option>
+                <option value="tag">Tag</option>
+            </select>
+            <!--PIE CHART TEST-->
+            <div id="piechart"></div>
+
+            <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+            <script type="text/javascript">
+                // Load google charts
+                google.charts.load('current', { 'packages': ['corechart'] });
+                google.charts.setOnLoadCallback(drawChart);
+
+                // Draw the chart and set the chart values
+                function drawChart() {
+                    var data = google.visualization.arrayToDataTable([
+                        ['Tag Name', 'Usage'],
+                        ['Work', 8],
+                        ['Eat', 2],
+                        ['TV', 4],
+                        ['Gym', 2],
+                        ['Sleep', 8]
+                    ]);
+
+                    // Optional; add a title and set the width and height of the chart
+
+                    var options = { 'title': 'My Average Day', 'width': 550, 'height': 400 };
+
+                    // Display the chart inside the <div> element with id="piechart"
+                    var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+                    chart.draw(data, options);
+                }
+            </script>
         </div>
         <!--Profile Section-->
         <?php include("Layout/adminProf.php");?>

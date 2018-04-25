@@ -93,6 +93,12 @@
                 <a href="../adminTag.php" target="_self" style="text-decoration : none;">Tag</a>
             </div>
         </div>
-
+        <div class="dropdown">
+            <button class="dropbtn">Alokasi Tag</button>
+            <div class="dropdown-content">
+                <a href="tagMhs.php" target="_self" style="text-decoration : none;">Mahasiswa</a>
+                <a href="tagAnn.php" target="_self" style="text-decoration : none;">Pengumuman</a>
+            </div>
+        </div>
     </div>
 </div>
