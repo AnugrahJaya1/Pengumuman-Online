@@ -18,7 +18,7 @@
         margin-left : 10%;
     }
     .forms{
-        width : 90%;
+        width : 97%;
         margin-left : 2%;
     }
     
