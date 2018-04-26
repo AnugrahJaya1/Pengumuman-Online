@@ -42,21 +42,6 @@
                 <input class="forms" name="passMhs" type="password" />
                 <br />
                 <br />
-                <fieldset>
-                    <legend>Tags</legend>
-                    <div data-role="controlgroup">
-                        <?php  ////////////////////////////////////////
-                              /// INVOKE CHECK BOX HERE //////////////
-                             ////////////////////////////////////////
-                        ?>
-                        <label for="red">Red</label>
-                        <input type="checkbox" name="favcolor" id="red" value="red" />
-                        <label for="green">Green</label>
-                        <input type="checkbox" name="favcolor" id="green" value="green" />
-                        <label for="blue">Blue</label>
-                        <input type="checkbox" name="favcolor" id="blue" value="blue" />
-                    </div>
-                </fieldset>
                 <input type="submit" value="Add" name="add" />
             </form>
 

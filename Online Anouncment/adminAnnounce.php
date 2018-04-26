@@ -46,21 +46,6 @@
                     <input id="titAuth" placeholder="Author Name Here" type="text" name="annAuth"/>
                     <input id="titDate" type="date" name="annDate" value="<?php echo date('Y-m-d') ?>" /> 
                   <textarea  name="annText" id="txtField"> </textarea><br />
-                    <fieldset>
-                        <legend>Tags</legend>
-                        <div data-role="controlgroup">
-                            <?php  ////////////////////////////////////////
-                                  /// INVOKE CHECK BOX HERE //////////////
-                                 ////////////////////////////////////////
-                            ?>
-                            <label for="red">Red</label>
-                            <input type="checkbox" name="favcolor" id="red" value="red" />
-                            <label for="green">Green</label>
-                            <input type="checkbox" name="favcolor" id="green" value="green" />
-                            <label for="blue">Blue</label>
-                            <input type="checkbox" name="favcolor" id="blue" value="blue" />
-                        </div>
-                    </fieldset>
                   <input type="submit" name="annButt" id="annButt" value="Publish"/>
                 </fieldset>
             </form>
