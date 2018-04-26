@@ -27,5 +27,5 @@
 
 <ul id="navBar">
     <li class="nav"><a href="UserPage.php">Home</a></li>
-    <li class="nav" id="last" style="float:right; border-left: 1px solid #000000; border-right:none;"><a href="index.php">Log Out</a></li>
+    <li class="nav" id="last" style="float:right; border-left: 1px solid #000000; border-right:none;"><a href="../MIBD1/index.php">Log Out</a></li>
 </ul>
