@@ -60,7 +60,7 @@
                 <tr>
                     <td name="mhsNum" >
                         <?php include("connection/connectionAdm.php"); 
-                        $sql="SELECT count(NPM) FROM mahasiswa"; 
+                        $sql="SELECT count(NPM) FROM users"; 
                         $res=$mysqli->query($sql); 
                         $row=$res->fetch_array();
                         echo "<p> $row[0] </p>";
@@ -76,7 +76,7 @@
                     </td>
                     <td name="annNum">
                         <?php include("connection/connectionAdm.php");
-                        $sql="SELECT count(idPengumuman) FROM pengumuman"; 
+                        $sql="SELECT count(IdPengumuman) FROM pengumuman"; 
                         $res=$mysqli->query($sql); 
                         $row=$res->fetch_array();
                         echo "<p> $row[0] </p>";
