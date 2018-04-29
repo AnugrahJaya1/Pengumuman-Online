@@ -9,7 +9,7 @@
             $email = $_POST['emailMhs'];
             $pass = md5($_POST['passMhs']);
 
-            $sql = "INSERT INTO mahasiswa (NPM, EmailMahasiswa, PasswordMahasiswa) VALUES ('$npm','$email','$pass')";
+            $sql = "INSERT INTO users (NPM, Email, Password) VALUES ('$npm','$email','$pass')";
 
             $mysqli -> query($sql);
         }
