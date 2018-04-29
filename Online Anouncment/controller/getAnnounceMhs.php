@@ -7,19 +7,9 @@
 	
 	//query untuk mengambil pengumuman yang relevan dengan mahasiswa
 	$sql="SELECT DISTINCT * 
-		FROM pengumuman 
-		INNER JOIN tagpengumuman ON pengumuman.IdPengumuman=tagpengumuman.IdPengumuman 
-		INNER JOIN pengumumanmahasiswa ON tagpengumuman.IdTag=pengumumanmahasiswa.IdTag 
-		WHERE pengumumanmahasiswa.EmailMahasiswa='".$user."'";
-
-
-	//buat search
-	if(isset($_GET['iSubmit'])){
-		$name=$_GET['iName'];
-		if(isset($name) && $name!=""){
-			$query .=" WHERE name LIKE '%$name%'";
-		}
-	}
+		FROM tag_pengumuman 
+		INNER JOIN tag_mahasiswa ON tag_pengumuman.IdTag=tag_mahasiswa.IdTag 
+		WHERE tag_mahasiswa.Email='".$user."'";
 
 
 	$start=0;
@@ -62,12 +52,12 @@
 	echo "<br>";
 
 	//paganition
-		if($pageCount>1){
-			for($i=0,$j=1;$i<$pageCount;$i++,$j++){
-				$str=($i)*$show;
-				$start=$str;
-				echo "<a href=UserPage.php?start=$str>$j</a>";
-			}
+	if($pageCount>1){
+		for($i=0,$j=1;$i<$pageCount;$i++,$j++){
+			$str=($i)*$show;
+			$start=$str;
+			echo "<a href=UserPage.php?start=$str>$j</a>";
 		}
+	}
 
 ?>
