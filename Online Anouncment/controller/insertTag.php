@@ -6,7 +6,7 @@
         if(isset($tag) && $tag!=""){
             $sql="INSERT INTO tag (NamaTag) VALUES ('$tag')";
             $mysqli->query($sql);
-            header("Location: ../adminTag.php");
         }
     }
+    header("Location: ../adminTag.php");
 ?>
