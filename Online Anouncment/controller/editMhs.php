@@ -5,10 +5,10 @@
        $npm=$_POST['npmCon'];
        $password=md5($_POST['passCon']);
        if(isset($npm) && isset($password) && $npm!="" && $password!=""){
-            $sql="UPDATE pengumumanmahasiswa SET PasswordMahasiswa='$password' WHERE NPM='$npm'";
+            $sql="UPDATE tag_mahasiswa SET Password='$password' WHERE NPM='$npm'";
             $mysqli->query($sql);
 
-            $sql="UPDATE mahasiswa SET PasswordMahasiswa='$password' WHERE NPM='$npm'";
+            $sql="UPDATE users SET Password='$password' WHERE NPM='$npm'";
             $mysqli->query($sql);
             
             
@@ -16,10 +16,10 @@
    }else if(isset($_POST['iDel'])){
         $npm=$_POST['npmCon'];
         if(isset($npm) && $npm!=""){
-            $sql="DELETE FROM pengumumanmahasiswa WHERE NPM='$npm'";
+            $sql="DELETE FROM tag_mahasiswa WHERE NPM='$npm'";
             $mysqli->query($sql);
 
-            $sql="DELETE FROM mahasiswa WHERE NPM='$npm'";
+            $sql="DELETE FROM users WHERE NPM='$npm'";
             $mysqli->query($sql);
             
         }
