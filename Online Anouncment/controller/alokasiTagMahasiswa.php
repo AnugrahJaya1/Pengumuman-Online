@@ -13,24 +13,27 @@
                 $name=$row['NamaTag'];
                 $idTag=$row['IdTag'];
                 
-                // echo $name." ";
-                // echo $idTag." ";
-
+                 //echo $name." ";
+                 //echo $idTag." ";
+               // echo isset($_POST[$name]);
+                //nama tag ga boleh ada spasi
                 if(isset($_POST[$name])){
                     array_push($arr,$name,$idTag);
                     //array_push($arr,$idTag);
+                    // echo $name." ";
+                    // echo $idTag." ";
                 }
             }
         }
 
         //echo sizeof($arr);
 
-        $sql="SELECT DISTINCT * FROM mahasiswa WHERE NPM='$npm'";
+        $sql="SELECT DISTINCT * FROM users WHERE NPM='$npm'";
         $res=$mysqli->query($sql);
         $row=$res->fetch_array();
 
-        $email=$row['EmailMahasiswa'];
-        $pass=$row['PasswordMahasiswa'];
+        $email=$row['Email'];
+        $pass=$row['Password'];
         
         //echo sizeof($arr)/2;
 
@@ -39,7 +42,7 @@
             $id=$arr[$j];
             // echo $nama." ";
             // echo $id." ";
-            $sql="INSERT INTO pengumumanmahasiswa (NPM,IdTag,EmailMahasiswa,PasswordMahasiswa,NamaTag) VALUES ('$npm','$id','$email','$pass','$nama')";
+            $sql="INSERT INTO tag_mahasiswa (NPM,Password,Email,IdTag,NamaTag) VALUES ('$npm','$pass','$email','$id','$nama')";
             $mysqli->query($sql);
         }
         

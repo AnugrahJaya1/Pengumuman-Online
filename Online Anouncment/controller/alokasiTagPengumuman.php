@@ -41,7 +41,7 @@
             $id=$arr[$j];
             // echo $nama." ";
             // echo $id." ";
-            $sql="INSERT INTO tagpengumuman (IdPengumuman,IdTag,Judul,Author,Deskripsi,Tanggal,NamaTag) VALUES ('$idP','$id','$judul','$author','$des','$tgl','$nama')";
+            $sql="INSERT INTO tag_pengumuman (IdTag,NamaTag,IdPengumuman,Judul,Tanggal,Author,Deskripsi) VALUES ('$id','$nama','$idP','$judul','$tgl','$author','$des')";
             $mysqli->query($sql);
         }
         
