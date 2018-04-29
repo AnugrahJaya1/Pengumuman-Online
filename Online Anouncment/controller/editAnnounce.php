@@ -12,11 +12,11 @@
        if(isset($judul) && isset($author) && isset($tanggal) && isset($des) 
                 && $judul!="" && $author!="" && $tanggal!="" && $des!=""){
 
-            $sql="UPDATE tagpengumuman SET Judul='$judul',Author='$author',Tanggal='$tanggal',Deskripsi='$des' WHERE Judul=$judul";
+            $sql="UPDATE tag_pengumuman SET Judul='$judul',Author='$author',Tanggal='$tanggal',Deskripsi='$des' WHERE Judul=$judul";
             $mysqli->query($sql);
 
-           $sql="UPDATE pengumuman SET Judul='$judul',Author='$author',Tanggal='$tanggal',Deskripsi='$des' WHERE Judul='$judul'";
-           $mysqli->query($sql);
+            $sql="UPDATE pengumuman SET Judul='$judul',Author='$author',Tanggal='$tanggal',Deskripsi='$des' WHERE Judul='$judul'";
+            $mysqli->query($sql);
            
        }
    }else if(isset($_GET['iDel'])){
@@ -28,7 +28,7 @@
         if(isset($judul) && isset($author) && isset($tanggal) && isset($des) 
              && $judul!="" && $author!="" && $tanggal!="" && $des!=""){
                  
-            $sql="DELETE FROM tagpengumuman WHERE Judul='$Judul'";
+            $sql="DELETE FROM tag_pengumuman WHERE Judul='$Judul'";
             $mysqli->query($sql);
 
             $sql="DELETE FROM pengumuman WHERE Judul='$judul";

@@ -56,7 +56,7 @@
             $judul=$_GET['searchAnn'];
 
             if(isset($judul) && $judul!=""){
-                $sql="SELECT DISTINCT * FROM pengumuman WHERE Judul='$judul'";
+                $sql="SELECT * FROM pengumuman WHERE Judul='$judul'";
                 $res=$mysqli->query($sql);
                 $row=$res->fetch_array();
                 $judul=$row['Judul'];
@@ -65,7 +65,7 @@
                 $des=$row['Deskripsi'];
                 
                 echo "
-            <form id='announceText' method='get' action='searchAnnAdm.php'>
+            <form id='announceText' method='get' action='controller/editAnnounce.php'>
                 <fieldset>
                     <legend>Write Announcment here </legend>
                     <br />
