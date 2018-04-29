@@ -28,7 +28,7 @@
 <head>
 
     <meta charset="utf-8" />
-    <title>Insert Mahasiswa</title>
+    <title>Alokasi Tag Mahasiswa</title>
 </head>
 <body>
     <!--NavBar--><?php include("Layout/header.php");?>

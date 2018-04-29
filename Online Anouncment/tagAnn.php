@@ -24,11 +24,30 @@
         width: 90%;
         margin-left: 2%;
     }
+
+    table {
+        border: 1px solid deepskyblue;
+        border-collapse: collapse;
+    }
+
+    td, tr {
+        border: 1px solid deepskyblue;
+        padding: 4px;
+    }
+
+    th {
+        padding: 4px;
+        border: 1px solid deepskyblue;
+        text-align: center;
+        background: deepskyblue;
+        color: white;
+    }
+
 </style>
 <head>
 
     <meta charset="utf-8" />
-    <title>Insert Mahasiswa</title>
+    <title>Alokasi Tag Pengumuman</title>
 </head>
 <body>
     <!--NavBar--><?php include("Layout/header.php");?>
@@ -57,7 +76,17 @@
                 </fieldset>
                 <input type="submit" value="submit" name="add" />
             </form>
+            <table>
+                <tr>
+                    <th>Judul</th>
+                    <th>Author</th>
+                    <th>Tanggal</th>
+                </tr>
+                <?php
+                    include("controller/getAnnounceAdm.php");
+                ?>
 
+            </table>
         </div>
         <!--Profile Section--><?php include("Layout/adminProf.php");?>
     </div>

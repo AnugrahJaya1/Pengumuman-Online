@@ -68,7 +68,7 @@
                     </td>
                     <td name="tagNum">
                         <?php include("connection/connectionAdm.php");
-                        $sql="SELECT count(idTag) FROM tag";  
+                        $sql="SELECT count(IdTag) FROM tag";  
                         $res=$mysqli->query($sql); 
                         $row=$res->fetch_array();
                         echo "<p> $row[0] </p>";
